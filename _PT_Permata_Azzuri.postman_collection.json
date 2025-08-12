@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "7edfb12a-1e8d-475e-b94b-591eb27578da",
+		"name": "_PT_Permata_Azzuri",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20281750"
+	},
+	"item": [
+		{
+			"name": "Buat_Data_Dokter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Alex\",\r\n    \"spesialis\": \"Dokter Kulit\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dokter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dokter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Semua_Data_Dokter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dokter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dokter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data_Menurut_Spesialis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dokter/spesialis/:spesialis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dokter",
+						"spesialis",
+						":spesialis"
+					],
+					"variable": [
+						{
+							"key": "spesialis",
+							"value": "Kecanti"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buat_Jadwal_Dokter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_dokter\": 4,\r\n    \"hari\": \"Sunday\",\r\n    \"mulai_praktek\": \"08:00\",\r\n    \"selesai_praktek\": \"14:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/jadwal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"jadwal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Semua_Jadwal_Tiap_Dokter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/jadwal/:id_dokter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"jadwal",
+						":id_dokter"
+					],
+					"variable": [
+						{
+							"key": "id_dokter",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking_Pasien_Dokter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_dokter\": 1,\r\n    \"nama_pasien\": \"Pasien_03\",\r\n    \"telepon_pasien\": \"0859283716\",\r\n    \"tanggal_janjian\": \"2025-08-18\",\r\n    \"waktu_janjian\": \"08:59\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Jadwal_Pasien_Menurut_Dokter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/booking/:id_dokter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"booking",
+						":id_dokter"
+					],
+					"variable": [
+						{
+							"key": "id_dokter",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
